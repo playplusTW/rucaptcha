@@ -46,11 +46,20 @@ fn rand_num(len: usize) -> usize {
 fn get_captcha(len: usize) -> Vec<String> {
     let mut res = vec![];
     for _ in 0..len {
-        let rnd = rand_num(53);
-        res.push(BASIC_CHAR[rnd].to_string())
+        let rnd = rand_num(10); // 确保这里是 10，以匹配新的 BASIC_CHAR 范围
+        res.push(BASIC_CHAR[rnd].to_string());
     }
     res
 }
+
+// fn get_captcha(len: usize) -> Vec<String> {
+//     let mut res = vec![];
+//     for _ in 0..len {
+//         let rnd = rand_num(53);
+//         res.push(BASIC_CHAR[rnd].to_string())
+//     }
+//     res
+// }
 
 #[allow(unused)]
 fn get_color() -> Rgba<u8> {
